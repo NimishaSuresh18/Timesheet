@@ -1,0 +1,35 @@
+@model Tms.Models.Assign
+@{
+
+}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Index</title>
+    <script type="text/javascript">
+        var interval = null;
+        function StartTimer() {
+            if (interval == null) {
+                var counter = 0;
+                interval = setInterval(function () {
+                    counter += 1;
+                    // Do your task.
+                    document.getElementById("lblCount").innerHTML = counter;
+                }, 1000);
+            }
+        }
+
+        function StopTimer() {
+            clearInterval(interval);
+            interval = null;
+            document.getElementById("lblCount").innerHTML = '0';
+        }
+    </script>
+</head>
+<body>
+    <span id="lblCount">0</span>
+    <br />
+    <input id="btnStart" type="button" value="Start" onclick="StartTimer();" />
+    <input id="btnStop" type="button" value="Stop" onclick="StopTimer();" />
+</body>
+</html>
